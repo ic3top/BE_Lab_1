@@ -6,6 +6,7 @@ import { loggerMiddleware } from '../utils/logger';
 
 import usersRouter from '../controllers/users.controller';
 import categoriesRouter from '../controllers/categories.controller';
+import expensesRouter from '../controllers/expenses.controller';
 
 function createServer() {
   const app = express();
@@ -16,6 +17,7 @@ function createServer() {
 
   app.use('/api/users', usersRouter);
   app.use('/api/categories', categoriesRouter);
+  app.use('/api/expenses', expensesRouter);
 
   app.use((req, res) => {
     res.status(404).json({ message: 'Not found' });
