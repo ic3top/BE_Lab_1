@@ -1,11 +1,12 @@
 import { v4 as uuidv4 } from 'uuid';
 import { User } from '../models/user';
 
+// TODO: use database
 const USERS: User[] = [];
 
-export const getUsers = () => USERS;
+export const getUsers = (): User[] => USERS;
 
-export const createUser = (login: string) => {
+export const createUser = (login: string): User => {
   const newUser = {
     login,
     id: uuidv4(),
