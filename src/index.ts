@@ -4,7 +4,7 @@ import createServer from './config/server';
 
 const app = createServer();
 
-app.listen(PORT, async () => {
+app.listen(PORT || 3000, async () => {
   logger.info(`[server]: Server is running at https://localhost:${PORT}`);
 });
 
